@@ -37,7 +37,7 @@ The current features are :
 1. From your projects root folder in terminal run:
 
 ```bash
-    composer require rachidlaasri/laravel-installer
+    composer require smart-systems-technology/laravel-installer
 ```
 
 2. Register the package
