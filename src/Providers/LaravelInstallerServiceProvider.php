@@ -36,15 +36,7 @@ class LaravelInstallerServiceProvider extends ServiceProvider
     {
         $router->middlewareGroup('install', [CanInstall::class]);
         $router->middlewareGroup('update', [CanUpdate::class]);
-    }
 
-    /**
-     * Publish config file for the installer.
-     *
-     * @return void
-     */
-    protected function publishFiles()
-    {
         $this->publishes([
             __DIR__.'/../Config/installer.php' => base_path('config/installer.php'),
         ], 'laravelinstaller');
