@@ -6,6 +6,7 @@ use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 use RachidLaasri\LaravelInstaller\Middleware\canInstall;
 use RachidLaasri\LaravelInstaller\Middleware\canUpdate;
+use Illuminate\Support\Facades\Artisan;
 
 class LaravelInstallerServiceProvider extends ServiceProvider
 {
@@ -23,6 +24,7 @@ class LaravelInstallerServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        Artisan::call('lang:publish');
         $this->publishFiles();
         $this->loadRoutesFrom(__DIR__.'/../Routes/web.php');
     }
